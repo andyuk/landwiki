@@ -1,52 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-  <Placemark>
-    <name>Test 1</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.51204186701204,-0.1914071941894191</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 2</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.50830254167493,-0.14042376523434097</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 3</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.507127261752665,-0.037255277685512844</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 1</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.536393389413334,-0.026612272314419094</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 1</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.53820855142598,-0.05287646298824722</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 1</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.50830254167493,-0.14042376523434097</coordinates>
-    </Point>
-  </Placemark>
-  <Placemark>
-    <name>Test 1</name>
-    <description>This is the location of my office.</description>
-    <Point>
-      <coordinates>51.531588199356726,-0.1268625164550441</coordinates>
-    </Point>
-  </Placemark>
+<Document>
+	<name>Brownfield</name>
+	<description>Brownfield sites</description>	
+    <Style id="brownfieldIcon">
+      <IconStyle>
+        <Icon>
+          <href>http://s3.amazonaws.com/landwiki/icons/pin1.png</href>
+        </Icon>
+      </IconStyle>
+      <LineStyle>
+        <width>2</width>
+      </LineStyle>
+    </Style>
+  <Folder>  
+  	<styleUrl>#brownfieldIcon</styleUrl>
+	  <Placemark>
+	    <name>Test 1</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.1914071941894191,51.51204186701204</coordinates>
+	    </Point>
+	    <styleUrl>#brownfieldIcon</styleUrl>
+	  </Placemark>
+	  <Placemark>
+	    <name>Test 3</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.037255277685512844,51.507127261752665</coordinates>
+	    </Point>
+	    <styleUrl>#brownfieldIcon</styleUrl>
+	  </Placemark>
+	  <Placemark>
+	    <name>Test</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.026612272314419094,51.536393389413334</coordinates>
+	    </Point>
+	  </Placemark>
+	  <Placemark>
+	    <name>Test</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.05287646298824722,51.53820855142598</coordinates>
+	    </Point>
+	  </Placemark>
+	  <Placemark>
+	    <name>Test 1</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.14042376523434097,51.50830254167493</coordinates>
+	    </Point>
+	  </Placemark>
+	  <Placemark>
+	    <name>Test 1</name>
+	    <description>This is the location of my office.</description>
+	    <Point>
+	      <coordinates>-0.1268625164550441,51.531588199356726</coordinates>
+	    </Point>
+	  </Placemark>
+	</Folder>
+</Document>
 </kml>

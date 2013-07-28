@@ -21,14 +21,21 @@ function initialize() {
   window.map = map;
 
   var kmlLayer = new google.maps.KmlLayer({
-    url: 'https://raw.github.com/andyuk/landwiki/master/www/data/brownfield.kml',
+    url: 'http://s3.amazonaws.com/landwiki/data/brownfield.kml?v7',
     //suppressInfoWindows: true,
+    preserveViewport: true,
     map: map
   });
 
+  // function showInContentWindow(text) {
+  //   var sidediv = document.getElementById('content-window');
+  //   sidediv.innerHTML = text;
+  // }
+
   google.maps.event.addListener(kmlLayer, 'click', function(kmlEvent) {
+    console.log('clicked', kmlEvent);
     var text = kmlEvent.featureData.description;
-    showInContentWindow(text);
+    //showInContentWindow(text);
   });
 
   var input = /** @type {HTMLInputElement} */(document.getElementById('target'));
@@ -101,6 +108,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div id="panel">
       <input id="target" type="text" placeholder="Search Box">
     </div>
+    <!-- <div id="content-window" style="width:19%; height:100%; float:left"></div> -->
     <div id="map-canvas"/>
   </body>
 </html>
