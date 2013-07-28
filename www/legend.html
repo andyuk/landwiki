@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div id="map-info" class="accordian">
+	<div class="accordion-group">
+		<h2 class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#map-legend" href="#layers">
+				Layers
+			</a>
+		</h2>
+		<form id="layers" class="accordion-body collapse in">
+			<fieldset class="accordion-inner">
+				<label title="Undeveloped land">
+					<i class="greenfield"></i>
+					<span>Greenfield</span>
+					<input type="checkbox" checked>
+				</label>
+				<label title="Previously developed land, no longer used">
+					<i class="greenfield"></i>
+					<span>Brownfield</span>
+					<input type="checkbox" checked>
+				</label>
+				<label title="Land actively being developed">
+					<i class="greenfield"></i>
+					<span>Development</span>
+					<input type="checkbox" checked>
+				</label>
+			</fieldset>
+		</form>
+	</div>
+
+
+	<div class="accordion-group">
+		<h2 class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#map-legend" href="#legend">
+				Legend
+			</a>
+		</h2>
+		<ul id="legend" class="accordion-body collapse in">
+			<li>
+				<h3>Plot size</h3>
+				<ul>
+					<li>Small</li>
+					<li>Medium</li>
+					<li>Large</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Availability</h3>
+				<ul>
+					<li>Unknown</li>
+					<li>For sale</li>
+					<li>Not for sale</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Availability</h3>
+				<ul>
+					<li>Unknown</li>
+					<li>For sale</li>
+					<li>Not for sale</li>
+				</ul>
+			</li>
+			<li>
+				<h3>Land features</h3>
+				<ul>
+					<li>Has planning permission</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</form>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
