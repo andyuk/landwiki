@@ -20,6 +20,17 @@ function initialize() {
   });
   window.map = map;
 
+  var kmlLayer = new google.maps.KmlLayer({
+    url: 'https://raw.github.com/andyuk/landwiki/master/www/data/brownfield.kml',
+    //suppressInfoWindows: true,
+    map: map
+  });
+
+  google.maps.event.addListener(kmlLayer, 'click', function(kmlEvent) {
+    var text = kmlEvent.featureData.description;
+    showInContentWindow(text);
+  });
+
   var input = /** @type {HTMLInputElement} */(document.getElementById('target'));
   var searchBox = new google.maps.places.SearchBox(input);
   var markers = [];
@@ -64,13 +75,12 @@ function initialize() {
     searchBox.setBounds(bounds);
   });
 
-  var myLatLng = new google.maps.LatLng(51.511213899999994, -0.11982439999997041);
-  var beachMarker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      icon: 'images/pins/24/pin1.png'
-  });
-
+  // var myLatLng = new google.maps.LatLng(51.511213899999994, -0.11982439999997041);
+  // var beachMarker = new google.maps.Marker({
+  //     position: myLatLng,
+  //     map: map,
+  //     icon: 'images/pins/24/pin1.png'
+  // });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
