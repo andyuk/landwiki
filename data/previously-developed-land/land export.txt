@@ -1,0 +1,1 @@
+mongoexport --db landwiki --collection land --csv --fieldFile export-fields.txt --out land-export.csv

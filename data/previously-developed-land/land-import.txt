@@ -1,0 +1,3 @@
+
+mongoimport --db landwiki --collection land --type csv --headerline --file land.csv
+

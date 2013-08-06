@@ -1,0 +1,6 @@
+_id
+latitude
+longitude
+icon
+labels
+title
