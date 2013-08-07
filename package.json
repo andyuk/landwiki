@@ -2,12 +2,21 @@
   "author": "",
   "name": "landwiki",
   "version": "0.0.1",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git://github.com/andyuk/landwiki.git"
   },
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "mongoose": "3.6.15"
+    "express": "3.3.4",
+    "hjs": "*",
+    "less-middleware": "*",
+    "mongoose": "3.6.15",
+    "underscore": "1.5.1",
+    "async": "~0.2.9"
   },
   "devDependencies": {},
   "optionalDependencies": {},
