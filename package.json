@@ -1,6 +1,7 @@
 {
-  "author": "",
+  "author": "Andrew Moist",
   "name": "landwiki",
+  "description": "Helping property developers find land.",
   "version": "0.0.1",
   "private": true,
   "repository": {
@@ -21,6 +22,7 @@
   "devDependencies": {},
   "optionalDependencies": {},
   "engines": {
-    "node": "*"
+    "node": "0.10.x",
+    "npm": "1.3.x"
   }
 }
