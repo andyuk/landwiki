@@ -1,13 +1,12 @@
+var express = require('express'),
+	routes = require('./routes'),
+	http = require('http'),
+	path = require('path'),
+	mongoose = require('mongoose');
+	config = require('./config.json'),
+	land = require('./routes/land');
 
-/**
- * Module dependencies.
- */
-
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+var MONGO_URI = (process.env.MONGOHQ_URL || config.mongo.uri);
 
 var app = express();
 
@@ -29,7 +28,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/land/:id', land.detail);
+
+mongoose.connect(MONGO_URI, function(err) {
+  if (err) throw err;
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
