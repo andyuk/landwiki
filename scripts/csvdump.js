@@ -23,7 +23,7 @@ mongoose.connect(MONGO_URI, function(err) {
   ];
 
 	csv()
-	.from(Land.find().limit(1000).stream())
+	.from(Land.find().stream())
   .transform(function(data, index){
     //console.log('data', data._id.toString());
     return [
