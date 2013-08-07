@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Land use - Google Fusion Tables</title>
+<title>Land wiki</title>
 <style type="text/css">
 html, body, #googft-mapCanvas {
-  height: 300px;
+  height: 100%;
   margin: 0;
   padding: 0;
-  width: 500px;
+  width: 100%;
 }
 </style>
 
@@ -17,8 +17,8 @@ html, body, #googft-mapCanvas {
   function initialize() {
     google.maps.visualRefresh = true;
     var map = new google.maps.Map(document.getElementById('googft-mapCanvas'), {
-      center: new google.maps.LatLng(51.49694507644044, -0.04112386848146077),
-      zoom: 12,
+      center: new google.maps.LatLng(51.7217801931774, -1.700871085000017),
+      zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
@@ -28,7 +28,7 @@ html, body, #googft-mapCanvas {
       heatmap: { enabled: false },
       query: {
         select: "col1",
-        from: "1HH_G8DMXOUeVcITmRi-lZ79hlP-W5rtOkT2MJgs",
+        from: "182q7OG6jR3m4Q45jh0PNeu5i3DhXOphJ4E5AvjE",
         where: ""
       },
       options: {
