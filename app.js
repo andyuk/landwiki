@@ -28,6 +28,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/preview', routes.map);
 app.get('/land/:id', land.detail);
 
 mongoose.connect(MONGO_URI, function(err) {
