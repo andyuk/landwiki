@@ -28,7 +28,7 @@ html, body, #googft-mapCanvas {
       heatmap: { enabled: false },
       query: {
         select: "col1",
-        from: "182q7OG6jR3m4Q45jh0PNeu5i3DhXOphJ4E5AvjE",
+        from: "1-P3MVQG4oJhiCZMEOgl-J-dAPz_hzM2C_Dv0oUM",
         where: ""
       },
       options: {

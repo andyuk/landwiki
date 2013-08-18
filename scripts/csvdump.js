@@ -21,11 +21,13 @@ mongoose.connect(MONGO_URI, function(err) {
     'title',
     'icon'
   ];
+  var rowCount = 0;
 
 	csv()
 	.from(Land.find().stream())
   .transform(function(data, index){
     //console.log('data', data._id.toString());
+    rowCount++;
     return [
       data._id.toString(), 
       data.latitude, 
@@ -40,7 +42,7 @@ mongoose.connect(MONGO_URI, function(err) {
     header: true
   })
 	.on('end', function(){ 
-		console.log('done');
+		console.log('Exported %s rows to %s', rowCount, outputFile);
 		process.exit();
 	});
 
