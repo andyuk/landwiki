@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<div id="map-info" class="accordian">
+	<div class="accordion-group">
+		<h2 class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#map-legend" href="#filters">
+				Filter
+			</a>
+		</h2>
+		<form id="filters" class="accordion-body collapse in">
+			<fieldset class="accordion-inner">
+				<label title="Small">
+					<input type="checkbox" name="small" data-query="size <= 1">
+				</label>
+				<label title="Medium">
+					<input type="checkbox" name="medium" data-query="size > 1 AND size <= 2">
+				</label>
+				<label title="Large">
+					<input type="checkbox" name="large" data-query="size > 2">
+				</label>
+				<label title="Unknown">
+					<input type="checkbox" name="unknown" data-query="size = ''">
+				</label>
+			</fieldset>
+		</form>
+	</div>
+</form>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script type="text/javascript">
+
+$(function() {
+	var $sizeFilterOptions = $('#filters input');
+	$sizeFilterOptions.on('change', function() {
+		
+		var conditions = [];
+		$sizeFilterOptions.each(function() {
+			if (! this.checked)
+				return;
+			conditions.push($(this).data('query'));
+		});
+		var applyFilter = conditions.length > 0 && conditions.length !== $sizeFilterOptions.length;
+		var whereClause = applyFilter ? conditions.join(' OR ') : '';
+		console.log('query', whereClause);
+	});
+});
+</script>
+
+
+</body>
+</html>
