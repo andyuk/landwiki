@@ -19,6 +19,8 @@ mongoose.connect(MONGO_URI, function(err) {
     'latitude',
     'longitude',
     'title',
+    'labels',
+    'area',
     'icon'
   ];
   var rowCount = 0;
@@ -33,8 +35,9 @@ mongoose.connect(MONGO_URI, function(err) {
       data.latitude, 
       data.longitude,
       data.title,
-      data.icon
-      //data.area
+      data.labels,
+      data.icon,
+      data.area
     ];
   })
   .to.stream(fs.createWriteStream(outputFile), {
