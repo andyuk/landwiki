@@ -25,8 +25,11 @@ mongoose.connect(MONGO_URI, function(err) {
   ];
   var rowCount = 0;
 
+  // Don't include point of interest
+  var query = { "labels": { "$not": /poi/ } };
+
 	csv()
-	.from(Land.find().stream())
+	.from(Land.find(query).stream())
   .transform(function(data, index){
     //console.log('data', data._id.toString());
     rowCount++;
@@ -36,8 +39,8 @@ mongoose.connect(MONGO_URI, function(err) {
       data.longitude,
       data.title,
       data.labels,
-      data.icon,
-      data.area
+      data.area,
+      data.icon
     ];
   })
   .to.stream(fs.createWriteStream(outputFile), {

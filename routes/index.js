@@ -10,3 +10,7 @@ exports.map = function(req, res){
   // res.redirect(url, 307); // temporary redirect
   res.render('index', { title: 'Land Wiki' });
 };
+
+exports.test = function(req, res){
+  res.render('test', { title: 'Land Wiki' });
+};
