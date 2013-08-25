@@ -11,41 +11,66 @@
     padding: 0;
     width: 100%;
   }
+  /* Fix Google Maps canvas
+   *
+   * Wrap your Google Maps embed in a `.google-map-canvas` to reset Bootstrap's
+   * global `box-sizing` changes. You may optionally need to reset the `max-width`
+   * on images in case you've applied that anywhere else. (That shouldn't be as
+   * necessary with Bootstrap 3 though as that behavior is relegated to the
+   * `.img-responsive` class.)
+   */
+
+  .google-map-canvas,
+  .google-map-canvas * { .box-sizing(content-box); }
+
+  /* Optional responsive image override */
+  img { max-width: none; }
   </style>
 </head>
 
 <body>
-
-  <div id="search-box">
-    <input id="search" type="text" placeholder="Search">
-  </div>
-  <div id="search-options" class="accordian">
-    <div class="accordion-group">
-      <h2 class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#search-options" href="#filters">
-          Filter
-        </a>
-      </h2>
-      <form id="filters" class="accordion-body collapse in">
-        <fieldset class="accordion-inner">
-          <label title="Small">
-            <input type="checkbox" name="small" data-query="area <= 0.2">
-          </label>
-          <label title="Medium">
-            <input type="checkbox" name="medium" data-query="area > 0.2 AND area <= 0.8">
-          </label>
-          <label title="Large">
-            <input type="checkbox" name="large" data-query="area > 0.8">
-          </label>
-          <label title="Unknown">
-            <input type="checkbox" name="unknown" data-query="area LIKE ''">
-          </label>
-        </fieldset>
-      </form>
+  <div class="container">
+    <div id="search-box">
+      <input id="search" type="text" class="form-control" placeholder="Search">
     </div>
+    <div id="search-options" class="accordian">
+      <div class="accordion-group">
+        <h2 class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#search-options" href="#filters">
+            Filter
+          </a>
+        </h2>
+        <form id="filters" class="form-horizontal accordion-body collapse" role="form">
+          <fieldset class="accordion-inner">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Area</label>
+
+              <div class="col-lg-10 area">
+                <label title="Show small areas, less than 0.2 acres. " data-toggle="tooltip">
+                  <input type="checkbox" name="small" data-query="area <= 0.2">
+                  <span class="icon"></span>
+                </label>
+                <label title="Show medium areas, between 0.2 and 0.8 acres." data-toggle="tooltip">
+                  <input type="checkbox" name="medium" data-query="area > 0.2 AND area <= 0.8">
+                  <span class="icon"></span>
+                </label>
+                <label title="Show large areas, over 0.8 acres.">
+                  <input type="checkbox" name="large" data-query="area > 0.8">
+                  <span class="icon"></span>
+                </label>
+                <label title="Show land of unknown size">
+                  <input type="checkbox" name="unknown" data-query="area LIKE ''">
+                  <span class="icon"></span>
+                </label>
+              </div>
+          </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div id="map" class="google-map-canvas"></div>
   </div>
-  <div id="map"></div>
-  
+    
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>

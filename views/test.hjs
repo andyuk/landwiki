@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title></title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Land wiki</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+	html, body, #map {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	}
+	</style>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
 
-<div id="search-options" class="accordian">
-	<div class="accordion-group">
-		<h2 class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#search-options" href="#filters">
-				Filter
-			</a>
-		</h2>
-		<form id="filters" class="accordion-body collapse in">
-			<fieldset class="accordion-inner">
-				<label title="Small">
-					<input type="checkbox" name="small" data-query="size <= 1">
-				</label>
-				<label title="Medium">
-					<input type="checkbox" name="medium" data-query="size > 1 AND size <= 2">
-				</label>
-				<label title="Large">
-					<input type="checkbox" name="large" data-query="size > 2">
-				</label>
-				<label title="Unknown">
-					<input type="checkbox" name="unknown" data-query="size = ''">
-				</label>
-			</fieldset>
-		</form>
-	</div>
+<div class="container">
+  <div id="search-box">
+    <input id="search" type="text" class="form-control" placeholder="Search">
+  </div>
+  <div id="search-options" class="accordian">
+    <div class="accordion-group">
+      <h2 class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#search-options" href="#filters">
+          Filter
+        </a>
+      </h2>
+
+      <form id="filters" class="form-horizontal accordion-body collapse" role="form">
+        <fieldset class="accordion-inner">
+          <div class="form-group">
+	          <label class="col-lg-2 control-label">Area</label>
+
+	          <div class="col-lg-10 area">
+		          <label title="Show small areas, less than 0.2 acres. " data-toggle="tooltip">
+		            <input type="checkbox" name="small" data-query="area <= 0.2">
+		            <span class="icon"></span>
+		          </label>
+		          <label title="Show medium areas, between 0.2 and 0.8 acres." data-toggle="tooltip">
+		            <input type="checkbox" name="medium" data-query="area > 0.2 AND area <= 0.8">
+		            <span class="icon"></span>
+		          </label>
+		          <label title="Show large areas, over 0.8 acres.">
+		            <input type="checkbox" name="large" data-query="area > 0.8">
+		            <span class="icon"></span>
+		          </label>
+		          <label title="Show land of unknown size">
+		            <input type="checkbox" name="unknown" data-query="area LIKE ''">
+		            <span class="icon"></span>
+		          </label>
+	      		</div>
+	      </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  
+
 </div>
-
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript">
-
 $(function() {
-	var $sizeFilterOptions = $('#filters input');
-	$sizeFilterOptions.on('change', function() {
-		
-		var conditions = [];
-		$sizeFilterOptions.each(function() {
-			if (! this.checked)
-				return;
-			conditions.push($(this).data('query'));
-		});
-		var applyFilter = conditions.length > 0 && conditions.length !== $sizeFilterOptions.length;
-		var whereClause = applyFilter ? conditions.join(' OR ') : '';
-		console.log('query', whereClause);
-	});
+	$('#filters label').tooltip();
 });
+
 </script>
-
-
 </body>
 </html>

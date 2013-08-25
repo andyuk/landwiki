@@ -1,3 +1,18 @@
+body {
+  padding: 10px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#map {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#search-box, #search-options {
+  width: 200px;
+}
+
 #search-box {
   position: absolute;
   top: 17px;
@@ -5,31 +20,64 @@
   z-index: 1;
 
   input {
-    width: 345px;
     padding: 8px;
     font-size: 12px;
   }
-}
-
-body {
-  padding: 10px;
-  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #search-options {
     position: absolute;
     top: 60px;
     left: 100px;
-    width: 345px;
     z-index: 100;
 
     h2, h3 {
         font-size: 100%;
         margin: 0;
     }
-    label {
-        width: 100%;
+}
+
+#filters {
+  .area label {
+    span {
+      display: inline-block;
+      background: url('/img/icons/circle-outline.png') 0 0px no-repeat;
+      height: 20px;
+      width: 20px;
+      background-size: 20px 20px;
+      padding: 0 0 0 0px;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
+    input {
+      display: none;
+
+    }
+    input[name=small] + span {
+      background-size: 16px 16px;
+      height: 16px;
+      width: 16px;
+    }
+    input[name=large] + span {
+      height: 24px;
+      width: 24px;
+      background-size: 24px 24px;
+    }
+    input[name=unknown] + span {
+      background-image: url('/img/icons/circle-question.png');
+    }
+    input:checked + span {
+      background-image: url('/img/icons/circle-solid.png');
+    }
+    input[name=unknown]:checked + span {
+      background-image: url('/img/icons/circle-question-solid.png');
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
 }
 
 .accordion-group {

@@ -50,6 +50,11 @@ $(function() {
 
     layer.setQuery(getQuery(whereClause));
   });
+
+
+  // Bootstrap
+  $('#filters label').tooltip();
+
 });
 
 function getQuery(whereClause) {
