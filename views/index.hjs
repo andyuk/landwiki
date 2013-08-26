@@ -36,7 +36,7 @@
     <div id="search-options" class="accordian">
       <div class="accordion-group">
         <h2 class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#search-options" href="#filters">
+          <a class="accordion-toggle" data-toggle="collapse" data-target="#filters" href="#filters">
             Filter
           </a>
         </h2>
