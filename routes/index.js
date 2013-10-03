@@ -1,13 +1,10 @@
 
 exports.index = function(req, res){
-  var url = 'http://land-wiki.wikispaces.com/';
+  var url = 'http://blog.landwiki.org.uk/';
   res.redirect(url, 307); // temporary redirect
-  // res.render('index', { title: 'Express' });
 };
 
 exports.map = function(req, res){
-  // var url = 'http://land-wiki.wikispaces.com/';
-  // res.redirect(url, 307); // temporary redirect
   res.render('index', { title: 'Land Wiki' });
 };
 
