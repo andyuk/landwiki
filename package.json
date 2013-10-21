@@ -21,7 +21,11 @@
     "node-csv": "~0.1.2",
     "csv": "~0.3.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "0.10.x",

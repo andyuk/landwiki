@@ -13,6 +13,10 @@ function toKeyValuePairs(inputObject) {
   return outputArray;
 };
 
+exports.add = function(req, res){
+  res.render('land-form', { title: 'Land Wiki' });
+};
+
 exports.detail = function(req, res){
 
   var id = req.param('id');

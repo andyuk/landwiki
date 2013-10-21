@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+
+<h2>Add land</h2>
+
+<form>
+
+	<!-- tags -->
+	<div id="wrapper">
+	<p>
+	    <input id="tag1" value="brownfield,derelict,private" />
+	</p>
+	</div>
+
+	<div id="md-editor">
+		<textarea id="content">#Foo BAR!</textarea>
+	</div>
+
+	<button type="button" class="btn btn-primary">Save</button>
+
+</form>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/epiceditor.js"></script>
+<script src="/js/jquery.tagsinput.js"></script>
+<script>
+var opts = {
+  container: 'md-editor',
+  textarea: 'content',
+  basePath: 'epiceditor',
+  clientSideStorage: true,
+  localStorageName: 'epiceditor',
+  useNativeFullscreen: true,
+  parser: marked,
+  file: {
+    name: 'epiceditor',
+    defaultContent: '',
+    autoSave: 100
+  },
+  theme: {
+    base: '../../../css/epiceditor/themes/base/epiceditor.css',
+    preview: '../../../css/epiceditor/themes/preview/github.css',
+    editor: '../../../css/epiceditor/themes/editor/epic-light.css'
+  },
+  button: {
+    preview: true,
+    fullscreen: true,
+    bar: "auto"
+  },
+  focusOnLoad: false,
+  shortcut: {
+    modifier: 18,
+    fullscreen: 70,
+    preview: 80
+  },
+  string: {
+    togglePreview: 'Toggle Preview Mode',
+    toggleEdit: 'Toggle Edit Mode',
+    toggleFullscreen: 'Enter Fullscreen'
+  },
+  autogrow: false
+}
+var editor = new EpicEditor(opts);
+editor.load();
+
+$('#tag1').tagsInput({
+   'height':'auto',
+   'width':'400px',
+});
+</script>
+</body>
+</html>
