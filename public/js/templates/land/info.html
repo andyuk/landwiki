@@ -1,0 +1,22 @@
+      <div class="row">
+        <div class="col-md-5 col-md-offset-7">
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <button type="button" class="close" aria-hidden="true">&times;</button>
+                {{ title }}
+              </div>
+              <div class="panel-body">
+                {{^dataItems}}
+                  <img src="/img/spinner.gif">
+                {{/dataItems}}
+                <ul>
+                {{#dataItems}}
+                  <li>{{key}}: {{value}}</li>
+                {{/dataItems}}
+                </ul>
+              </div>
+              <div class="panel-footer"><a href="#edit">Edit</a></div>
+            </div>
+
+        </div>

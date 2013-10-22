@@ -1,7 +1,8 @@
 define([
   'backbone',
-  'underscore'
-  ], function(Backbone, _) {
+  'underscore',
+  'views/land/info'
+  ], function(Backbone, _, LandInfoView) {
 
   var MapView = Backbone.View.extend({
 
@@ -12,6 +13,7 @@ define([
       this.$sizeFilterOptions = $('#filters input');
 
       this.initMap();
+      this.viewLandInfo('http://www.landwiki.org.uk/land/5210fc910ee31cfe59002b1f');
     },
 
     initMap: function() {
@@ -53,7 +55,22 @@ define([
       // Unfortunately Google does not allow us to use data attributes in the template
       // So we must pluck the ID out manually.
       var id = link.href.substr(link.href.lastIndexOf('/')+1, link.href.length);
+
       console.log('land id', id);
+      this.viewLandInfo(id);
+    },
+
+    viewLandInfo: function(id) {
+      // var landModel = new LandModel({
+      //   id: id
+      // });
+      // this.model.fetch();
+
+      if (! this.infoPanel)
+        this.infoPanel = new LandInfoView({ model: landModel});
+      this.infoPanel.render();
+      if (this.infoPanel.$el.parent().length === 0)
+        this.infoPanel.$el.appendTo(this.$el.parent());      
     },
 
     updateMapQuery: function() {

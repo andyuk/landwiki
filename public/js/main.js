@@ -2,7 +2,9 @@ require.config({
   baseUrl: "js/",
   paths: {
     backbone: '/components/backbone/backbone-min',
-    underscore: '/components/underscore/underscore-min'
+    underscore: '/components/underscore/underscore-min',
+    text: '/components/requirejs-text/text',
+    hogan: '/components/hogan/web/builds/2.0.0/hogan-2.0.0.amd'
   },
   shim: {
     'backbone': {
@@ -15,6 +17,9 @@ require.config({
     },
     'underscore': {
         exports: '_'
+    },
+    'hogan': {
+        exports: 'Hogan'
     }
   }
 
