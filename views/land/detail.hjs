@@ -6,11 +6,30 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
-    <h3>{{ title }}</h3>
-    <ul>
-    {{#dataItems}}
-      <li>{{key}}: {{value}}</li>
-    {{/dataItems}}
-    </ul>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-5 col-md-offset-7">
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <button type="button" class="close" aria-hidden="true">&times;</button>
+                {{ title }}
+              </div>
+              <div class="panel-body">
+                <ul>
+                {{#dataItems}}
+                  <li>{{key}}: {{value}}</li>
+                {{/dataItems}}
+                </ul>
+              </div>
+              <div class="panel-footer"><a href="#edit">Edit</a></div>
+            </div>
+
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
