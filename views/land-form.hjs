@@ -8,20 +8,27 @@
 
 <h2>Add land</h2>
 
-<form>
+<form role="form">
 
-	<!-- tags -->
-	<div id="wrapper">
-	<p>
-	    <input id="tag1" value="brownfield,derelict,private" />
-	</p>
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="title" name="title" class="form-control" />
+	</div>
+
+	<div class="form-group">
+		<label for="labels">Labels</label>
+		<div>
+		<p>
+		    <input id="labels" name="labels" value="brownfield,derelict,private" />
+		</p>
+		</div>
 	</div>
 
 	<div id="md-editor">
-		<textarea id="content">#Foo BAR!</textarea>
+		<textarea id="text" name="text">#Foo BAR!</textarea>
 	</div>
 
-	<button type="button" class="btn btn-primary">Save</button>
+	<button type="submit" class="btn btn-primary">Save</button>
 
 </form>
 
@@ -32,7 +39,7 @@
 <script>
 var opts = {
   container: 'md-editor',
-  textarea: 'content',
+  textarea: 'text',
   basePath: 'epiceditor',
   clientSideStorage: true,
   localStorageName: 'epiceditor',
@@ -69,10 +76,38 @@ var opts = {
 var editor = new EpicEditor(opts);
 editor.load();
 
-$('#tag1').tagsInput({
-   'height':'auto',
-   'width':'400px',
+$('#labels').tagsInput({
+	'defaultText': 'add label',
+	'height':'auto',
+	'width':'400px',
 });
+
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+
+$('form').on('submit', function() {
+
+	var url = 'http://www.mocky.io/v2/5265436d4e3560ce0151d9e7';
+	var data = $('form').serializeObject();
+
+	console.log('submit', data);
+	return false;
+});
+
 </script>
 </body>
 </html>
