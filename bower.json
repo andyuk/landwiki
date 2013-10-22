@@ -11,6 +11,9 @@
   "dependencies": {
     "bootstrap": "~3.0.0",
     "jquery.tagsinput": "1.3.2",
-    "EpicEditor": "0.2.2"
+    "EpicEditor": "0.2.2",
+    "requirejs-jquery": "0.25.0",
+    "underscore": "1.5.2",
+    "backbone": "1.1.0"
   }
 }
