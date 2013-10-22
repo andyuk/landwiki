@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Land wiki</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <style>
   html, body, #map {
     height: 100%;
@@ -30,17 +30,20 @@
 
 <body>
   <div class="container">
-    <div id="search-box">
-      <input id="search" type="text" class="form-control" placeholder="Search">
-    </div>
-    <div id="search-options" class="accordian">
-      <div class="accordion-group">
-        <h2 class="accordion-heading">
+    <form id="search-form" class="form-inline" role="form">
+      <div class="form-group">
+        <input id="search" type="text" class="form-control" placeholder="Your location">
+      </div>
+      <!--<button type="submit" class="btn btn-default">Search</button>-->
+    </form>
+    <div id="search-options" class="panel">
+      <div class="panel-group">
+        <h2 class="panel-heading">
           <a class="accordion-toggle" data-toggle="collapse" data-target="#filters" href="#filters">
             Filter
           </a>
         </h2>
-        <form id="filters" class="form-horizontal accordion-body collapse" role="form">
+        <form id="filters" class="form-horizontal panel-body collapse" role="form">
           <fieldset class="accordion-inner">
             <div class="form-group">
               <label class="col-lg-2 control-label">Area</label>
@@ -72,8 +75,8 @@
   </div>
     
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="/components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

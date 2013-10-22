@@ -14,7 +14,7 @@ function toKeyValuePairs(inputObject) {
 };
 
 exports.add = function(req, res){
-  res.render('land-form', { title: 'Land Wiki' });
+  res.render('land/form', { title: 'Land Wiki' });
 };
 
 exports.detail = function(req, res){
@@ -31,7 +31,7 @@ exports.detail = function(req, res){
       title: doc.title,
       dataItems: toKeyValuePairs(doc.originalData)
     };
-    res.render('land', data);
+    res.render('land/detail', data);
   });
 
   // var data = { 

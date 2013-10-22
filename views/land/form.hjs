@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
@@ -24,18 +24,17 @@
 		</div>
 	</div>
 
-	<div id="md-editor">
-		<textarea id="text" name="text">#Foo BAR!</textarea>
-	</div>
+  <textarea id="text" name="text">#Foo BAR!</textarea>
+	<div id="md-editor"></div>
 
 	<button type="submit" class="btn btn-primary">Save</button>
 
 </form>
 
-<script src="/js/jquery.js"></script>
-<script src="/js/bootstrap.js"></script>
-<script src="/js/epiceditor.js"></script>
-<script src="/js/jquery.tagsinput.js"></script>
+<script src="/components/jquery/jquery.js"></script>
+<script src="/components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/components/EpicEditor/epiceditor/js/epiceditor.js"></script>
+<script src="/components/jquery.tagsinput/jquery.tagsinput.js"></script>
 <script>
 var opts = {
   container: 'md-editor',
@@ -51,9 +50,9 @@ var opts = {
     autoSave: 100
   },
   theme: {
-    base: '../../../css/epiceditor/themes/base/epiceditor.css',
-    preview: '../../../css/epiceditor/themes/preview/github.css',
-    editor: '../../../css/epiceditor/themes/editor/epic-light.css'
+    base: '../../../components/EpicEditor/epiceditor/themes/base/epiceditor.css',
+    preview: '../../../components/EpicEditor/epiceditor/themes/preview/github.css',
+    editor: '../../../components/EpicEditor/epiceditor/themes/editor/epic-light.css'
   },
   button: {
     preview: true,
@@ -74,12 +73,25 @@ var opts = {
   autogrow: false
 }
 var editor = new EpicEditor(opts);
-editor.load();
 
-$('#labels').tagsInput({
-	'defaultText': 'add label',
-	'height':'auto',
-	'width':'400px',
+$(function() {
+  editor.load();  
+
+  $('#labels').tagsInput({
+    'defaultText': 'add label',
+    'height':'auto',
+    'width':'400px',
+  });
+
+  $('form').on('submit', function() {
+
+    var url = 'http://www.mocky.io/v2/5265436d4e3560ce0151d9e7';
+    var data = $('form').serializeObject();
+
+    console.log('submit', data);
+    return false;
+  });
+
 });
 
 $.fn.serializeObject = function()
@@ -98,15 +110,6 @@ $.fn.serializeObject = function()
     });
     return o;
 };
-
-$('form').on('submit', function() {
-
-	var url = 'http://www.mocky.io/v2/5265436d4e3560ce0151d9e7';
-	var data = $('form').serializeObject();
-
-	console.log('submit', data);
-	return false;
-});
 
 </script>
 </body>

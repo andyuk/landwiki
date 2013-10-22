@@ -7,17 +7,17 @@ body {
   top: 0px;
   left: 0px;
 }
-#search-box,
+#search-form input,
 #search-options {
   width: 200px;
 }
-#search-box {
+#search-form {
   position: absolute;
   top: 17px;
   left: 100px;
   z-index: 1;
 }
-#search-box input {
+#search-form input {
   padding: 8px;
   font-size: 12px;
 }
@@ -68,14 +68,11 @@ body {
 #filters .form-group {
   margin-bottom: 0;
 }
-.accordion-group {
-  background-color: #FFF;
+textarea[name=text] {
+  display: none;
 }
 #md-editor {
   margin-bottom: 10px;
-}
-#md-editor > textarea {
-  display: none;
 }
 #md-editor iframe {
   border: 1px solid #CCC;

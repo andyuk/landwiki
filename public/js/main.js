@@ -51,6 +51,10 @@ $(function() {
     layer.setQuery(getQuery(whereClause));
   });
 
+  // $('.googft-info-window a').on('click', function() { 
+  //   console.log('open');
+  //   return false;
+  // });
 
   // Bootstrap
   $('#filters label').tooltip();
