@@ -7,14 +7,10 @@
                 {{ title }}
               </div>
               <div class="panel-body">
-                {{^dataItems}}
+                {{^text}}
                   <img src="/img/spinner.gif">
-                {{/dataItems}}
-                <ul>
-                {{#dataItems}}
-                  <li>{{key}}: {{value}}</li>
-                {{/dataItems}}
-                </ul>
+                {{/text}}
+                {{text}}
               </div>
               <div class="panel-footer"><a href="#edit">Edit</a></div>
             </div>

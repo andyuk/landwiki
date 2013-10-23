@@ -1,8 +1,9 @@
 define([
   'backbone',
   'underscore',
+  'models/land',
   'views/land/info'
-  ], function(Backbone, _, LandInfoView) {
+  ], function(Backbone, _, LandModel, LandInfoView) {
 
   var MapView = Backbone.View.extend({
 
@@ -61,10 +62,10 @@ define([
     },
 
     viewLandInfo: function(id) {
-      // var landModel = new LandModel({
-      //   id: id
-      // });
-      // this.model.fetch();
+      var landModel = new LandModel({
+        id: '5267f0af93750a3e0269cdc1'
+      });
+      landModel.fetch();
 
       if (! this.infoPanel)
         this.infoPanel = new LandInfoView({ model: landModel});

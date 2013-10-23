@@ -13,13 +13,17 @@ define([
     initialize: function() {
       console.log('LandInfoView init');
       this.template = Hogan.compile(template);
+
+      this.bindEvents();
+    },
+
+    bindEvents: function() {
+      this.model.on('sync', _.bind(this.render, this));
     },
 
     render: function() {
-      console.log('LandInfoView render');
-      var data = {
-        title: "Untitled",
-      };
+      var data = this.model.toJSON();
+      console.log('LandInfoView render', data);
       var html = this.template.render(data);
 
       this.$el.html(html);
