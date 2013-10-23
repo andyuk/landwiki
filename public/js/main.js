@@ -6,7 +6,10 @@ require.config({
     backbone: '/components/backbone/backbone-min',
     underscore: '/components/underscore/underscore-min',
     text: '/components/requirejs-text/text',
-    hogan: '/components/hogan/web/builds/2.0.0/hogan-2.0.0.amd'
+    hogan: '/components/hogan/web/builds/2.0.0/hogan-2.0.0.amd',
+    epiceditor: '/components/EpicEditor/src/editor',
+    marked: '/components/marked/lib/marked',
+    tagsinput: '/components/jquery.tagsinput/jquery.tagsinput'
   },
   shim: {
     'backbone': {
@@ -22,6 +25,12 @@ require.config({
     },
     'hogan': {
         exports: 'Hogan'
+    },
+    'epiceditor': {
+        exports: 'EpicEditor'
+    },
+    'marked': {
+        exports: 'marked'
     }
   }
 

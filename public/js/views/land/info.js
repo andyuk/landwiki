@@ -12,30 +12,38 @@ define([
       element: 'div',
 
       events: {
-        "click a[rel=edit-land]": "editLand"
+        "click a[rel=edit-land]"  : "editLand",
+        "click button.close"      : "close"
       },
 
       initialize: function() {
-        console.log('LandInfoView init');
+        _.bindAll(this, ['render']);
+
         this.template = Hogan.compile(template);
 
         this.bindEvents();
       },
 
       bindEvents: function() {
-        this.model.on('sync', _.bind(this.render, this));
+        this.model.on('sync', this.render);
+      },
+
+      unbindEvents: function() {
+        this.model.off('sync', this.render);
       },
 
       editLand: function() {
-        console.log('editLand');
         app.navigate("edit/" + this.model.id, {trigger: true});
+      },
+
+      close: function() {
+        this.unbindEvents();
+        this.remove();
       },
 
       render: function() {
         var data = this.model.toJSON();
-        console.log('LandInfoView render', data);
         var html = this.template.render(data);
-
         this.$el.html(html);
         return this;
       }

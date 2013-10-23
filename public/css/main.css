@@ -71,9 +71,6 @@ body {
 textarea[name=text] {
   display: none;
 }
-#md-editor {
-  margin-bottom: 10px;
-}
 #md-editor iframe {
   border: 1px solid #CCC;
 }
