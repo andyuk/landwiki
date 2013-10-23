@@ -77,6 +77,9 @@ body {
 .lw-info-panel button.close {
   margin-top: -3px;
 }
+.lw-info-panel .panel-body {
+  min-height: 100px;
+}
 textarea[name=text] {
   display: none;
 }
