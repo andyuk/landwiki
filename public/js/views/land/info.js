@@ -3,39 +3,43 @@ define([
   'underscore',
   'hogan',
   'text!templates/land/info.html'
-  ], function(Backbone, _, Hogan, template) {
+  ], 
+  function(Backbone, _, Hogan, template) {
 
-  var LandInfoView = Backbone.View.extend({
+    var LandInfoView = Backbone.View.extend({
 
-    className: 'lw-info-panel',
-    element: 'div',
+      className: 'lw-info-panel',
+      element: 'div',
 
-    initialize: function() {
-      console.log('LandInfoView init');
-      this.template = Hogan.compile(template);
+      events: {
+        "click a[rel=edit-land]": "editLand"
+      },
 
-      this.bindEvents();
-    },
+      initialize: function() {
+        console.log('LandInfoView init');
+        this.template = Hogan.compile(template);
 
-    bindEvents: function() {
-      this.model.on('sync', _.bind(this.render, this));
-    },
+        this.bindEvents();
+      },
 
-    render: function() {
-      var data = this.model.toJSON();
-      console.log('LandInfoView render', data);
-      var html = this.template.render(data);
+      bindEvents: function() {
+        this.model.on('sync', _.bind(this.render, this));
+      },
 
-      this.$el.html(html);
-      return this;
-    }
+      editLand: function() {
+        console.log('editLand');
+        app.navigate("edit/" + this.model.id, {trigger: true});
+      },
 
-  });
+      render: function() {
+        var data = this.model.toJSON();
+        console.log('LandInfoView render', data);
+        var html = this.template.render(data);
 
-  return LandInfoView;
-
-});
-
-
-
-
+        this.$el.html(html);
+        return this;
+      }
+    });
+    return LandInfoView;
+  }
+);

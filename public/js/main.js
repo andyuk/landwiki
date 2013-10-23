@@ -1,5 +1,7 @@
+/*global app: true */
+
 require.config({
-  baseUrl: "js/",
+  baseUrl: "/js/",
   paths: {
     backbone: '/components/backbone/backbone-min',
     underscore: '/components/underscore/underscore-min',
@@ -25,14 +27,62 @@ require.config({
 
 });
 
-require(["jquery", "views/map"], function($, MapView, MapSearchView) {
+define(
+  "router",
+  [
+    "backbone",
+    "models/land",
+    "views/map",
+    "views/land/form",
+    "views/land/info"
+  ], 
+  function(Backbone, LandModel, MapView, LandFormView, LandInfoView) {
+    var AppRouter = Backbone.Router.extend({
+
+      routes: {
+        "info/:id"      : "info",
+        "edit/:id"      : "edit"
+      },
+
+      initialize: function() {
+        this.currentView = null;
+        this.$viewContainer = $('#currentView');
+
+        console.log('init router');
+        var mapView = new MapView({ el: $('#map') });
+        mapView.bindEvents();
+      },
+
+      setView: function(view) {
+        if (this.currentView)
+          this.currentView.remove();
+        this.currentView = view;
+        this.$viewContainer.append(this.currentView.render().$el);
+      },
+
+      info: function(id) {
+        var landModel = new LandModel({ id: id });
+        landModel.fetch();
+
+        var infoPanel = new LandInfoView({ model: landModel});
+        this.setView(infoPanel);
+      },
+
+      edit: function(id) {
+        var landModel = new LandModel({ id: id });
+        landModel.fetch();
+
+        var form = new LandFormView({ model: landModel});
+        this.setView(form);
+      }
+
+    });
+    return AppRouter;
+});
+
+require(["jquery", "router"], function($, AppRouter) {
   $(function() {
-
-      var mapView = new MapView({ el: $('#map') });
-      mapView.bindEvents();
-
-      // var mapSearchView = new MapSearchView({ el: $('') });
-      // mapView.bindEvents();
-
+    window.app = new AppRouter();
+    Backbone.history.start({pushState: true, root: "/preview/"});
   });
 });

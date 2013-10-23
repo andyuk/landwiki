@@ -1,11 +1,11 @@
 define([
   'backbone'
-  ], function(Backbone) {
+  ], 
+  function(Backbone) {
 
     var LandModel = Backbone.Model.extend({
 
       urlRoot: '/json/land-response.json?'
-
     });
 
     return LandModel;
