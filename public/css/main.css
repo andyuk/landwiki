@@ -68,6 +68,15 @@ body {
 #filters .form-group {
   margin-bottom: 0;
 }
+.lw-info-panel {
+  position: absolute;
+  right: 20px;
+  width: 400px;
+  margin-top: 45px;
+}
+.lw-info-panel button.close {
+  margin-top: -3px;
+}
 textarea[name=text] {
   display: none;
 }
