@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Looking for Land? Perhaps we can help.</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/survey.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header>
+        <a href="http://www.landwiki.org.uk"><img src="/img/landwiki_logo.png" height="50" width="169" class="logo"></a>
+      </header>
+
+      <section class="survey-intro">
+        <h1>Thanks!</h1>
+        <p class="lead">We'll be publishing the results on our blog soon.</p>
+      </section>
+
+      <hr>
+
+      <section class="survey-intro">
+        <h2>What are we working on at LandWiki?</h2>
+        <p>
+
+        <ul>
+          <li>Developing the LandWiki map, mapping brownfield sites, council plans and more.</li>
+          <li>Talking to government about releasing more public land to be used for housing.</li>
+          <li>Researching the land problem in the UK</li>
+          <li>Publishing information to help guide people through the process of finding and buying land.</li>
+        </ul>
+
+        </p>
+      </section>
+
+      <hr>
+
+      <section>
+        <h2>Can you help?</h2>
+        <p>You can help by contributing time or money to the project. If you're short of time, please show your support by funding the project.</p>
+        <br>
+        <form action="https://www.paypal.com/cgi-bin/webscr" class="paypal" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="JXHVGKSFZ8T5A">
+          <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+        </form>
+
+      </section>
+
+      <hr>
+
+      <section class="mailinglist">
+        <h2>Stay up to date</h2>
+        <p>Join our mailing list to receive a monthly newsletter.</p>
+
+        <div id="mc_embed_signup">
+        <form role="form" action="http://landwiki.us3.list-manage.com/subscribe/post?u=a98c880fec64630d859d71919&amp;id=dfc773c9f4" method="post" id="" name="mc-embedded-subscribe-form" class="mailing-list-form" target="_blank">
+          <div class="form-group">
+            <label for="mce-EMAIL">Email</label>
+            <input type="email" class="form-control" value="" name="EMAIL" class="email" id="mce-EMAIL" required>
+          </div>
+          <input type="submit" class="btn btn-large btn-default" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </form>
+        </div>
+
+      </section>
+
+      <hr>
+
+      <section class="links">
+        <div class="row">
+          <div class="col-md-6">
+
+          <a class="btn btn-primary btn-lg" href="http://blog.landwiki.org.uk/about-landwiki/">
+            Read more about LandWiki
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+          </div>
+          <div class="col-md-6">
+            <a class="btn btn-default btn-lg" href="http://blog.landwiki.org.uk/contact/">
+              <span class="glyphicon glyphicon-envelope"></span> Contact us
+            </a>
+            <a class="btn btn-default btn-lg" href="https://twitter.com/landwiki">
+              <span class="social twitter"></span> Twitter
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <footer>
+        <p><small>Crafted with care in London, England.</small></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+  </body>
+</html>

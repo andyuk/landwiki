@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Looking for Land? Perhaps we can help.</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/survey.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header>
+        <a href="http://www.landwiki.org.uk"><img src="/img/landwiki_logo.png" height="50" width="169" class="logo"></a>
+      </header>
+
+      <section class="survey-intro">
+        <h1>Looking for land?</h1>
+        <p class="lead">We're helping people like you find land. <a href="http://www.landwiki.org.uk">LandWiki</a> is an open platform encouraging citizens to help each other to find land.</p>
+        <p>We're doing a survey to identify the main problems people have with finding and buying land. </p>
+      </section>
+
+      <section class="survey">
+        <a href="https://landwiki.wufoo.com/forms/mdla6dp0eqlmgw/" class="btn btn-primary btn-lg">Start the 30 second survey</a>
+      </section>
+
+      <hr>
+
+      <section class="about clearfix">
+        <h2>About us</h2>
+        <div class="row">
+          <div class="col-md-6">
+                <p>
+                  <img src="img/andrew.jpg" width="120" alt="Andrew Moist" class="img-rounded">
+                Andrew Moist is a software developer in Hackney, London. He's passionate about making better digital tools to help solve big problems in our society, such as affordable housing. 
+                </p>
+                <p>
+                His interest in land came from getting involved with collective custom build communities. He soon discovered that finding land is a big problem, not just for the custom build industry.<!--We should be doing everything we can to make better use of the land around us. Better public information, more transparency and community support will get us build better communities.--></p>
+          </div>
+          <div class="col-md-6">
+                <p>
+                  <img src="http://dummyimage.com/120x120/000/fff" alt="Mairead" class="img-rounded">
+                Aliquam interdum pulvinar mollis. In in venenatis velit, vitae fermentum libero. Nullam in elementum massa. Sed eros mi, egestas vitae augue vitae, varius lacinia eros. Suspendisse potenti.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="links">
+        <div class="row">
+          <div class="col-md-6">
+
+          <a class="btn btn-primary btn-lg" href="http://blog.landwiki.org.uk/about-landwiki/">
+            Read more about LandWiki
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+          </div>
+          <div class="col-md-6">
+            <a class="btn btn-default btn-lg" href="http://blog.landwiki.org.uk/contact/">
+              <span class="glyphicon glyphicon-envelope"></span> Contact us
+            </a>
+            <a class="btn btn-default btn-lg" href="https://twitter.com/landwiki">
+              <span class="social twitter"></span> Twitter
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <hr>
+
+      <footer>
+        <p><small>Crafted with care in London, England.</small></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+  </body>
+</html>

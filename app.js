@@ -4,7 +4,8 @@ var express = require('express'),
 	path = require('path'),
 	mongoose = require('mongoose');
 	config = require('./config.json'),
-	land = require('./routes/land');
+	land = require('./routes/land'),
+	staticHTML = require('./routes/staticHTML');
 
 var MONGO_URI = (process.env.MONGOHQ_URL || config.mongo.uri);
 
@@ -33,6 +34,15 @@ app.get('/preview', routes.map);
 app.get('/test', routes.test);
 app.get('/land/add', land.add);
 app.get('/land/:id', land.detail);
+
+app.get('/survey', staticHTML.render('survey/index'));
+app.get('/survey/g', staticHTML.render('survey/index'));  // Intentional, for analytics.
+app.get('/survey/thanks', staticHTML.render('survey/thanks'));
+
+app.get('/donation/thanks', staticHTML.render('donation/thanks'));
+app.get('/donation/cancelled', staticHTML.render('donation/cancelled'));
+
+app.get('/mailinglist/thanks', staticHTML.render('mailinglist/thanks'));
 
 mongoose.connect(MONGO_URI, function(err) {
   if (err) throw err;
