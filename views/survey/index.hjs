@@ -21,12 +21,12 @@
     <div class="container">
 
       <header>
-        <a href="http://www.landwiki.org.uk"><img src="/img/landwiki_logo.png" height="50" width="169" class="logo"></a>
+        <a href="http://www.landwiki.org.uk" target="_blank"><img src="/img/landwiki_logo.png" height="50" width="169" class="logo"></a>
       </header>
 
       <section class="survey-intro">
         <h1>Looking for land?</h1>
-        <p class="lead">We're helping people like you find land. <a href="http://www.landwiki.org.uk">Land Wiki</a> is an open platform encouraging citizens to help each other to find land.</p>
+        <p class="lead">We're helping people like you find land. <a href="http://www.landwiki.org.uk" target="_blank">Land Wiki</a> is an open platform encouraging citizens to help each other to find land.</p>
         <p>We're doing a survey to identify the main problems people have with finding and buying land. </p>
       </section>
 
@@ -41,7 +41,7 @@
         <div class="row">
           <div class="col-md-6">
                 <p>
-                  <img src="img/andrew.jpg" width="120" alt="Andrew Moist" class="img-rounded">
+                  <img src="/img/andrew.jpg" width="120" alt="Andrew Moist" class="img-rounded">
                 Andrew Moist is a software developer in Hackney, London. He's passionate about making better digital tools to help solve big problems in our society, such as affordable housing. 
                 </p>
                 <p>
@@ -49,7 +49,7 @@
           </div>
           <div class="col-md-6">
                 <p>
-                  <img src="img/mairead.jpg" width="120" alt="Mairead" class="img-rounded">
+                  <img src="/img/mairead.jpg" width="120" alt="Mairead" class="img-rounded">
                 Mairead is a creative web developer, based in London, who specialises in exciting interactive experiences. She is interested in any technology that pushes the boundaries of web development and is always looking for new ideas to harness what the internet can do for us.</p>
                 <p>She thinks the internet is our greatest tool to provide social change and got involved with the Land Wiki to help users share information in a meaningful way and build a better future for themselves.</p>
           </div>
@@ -61,16 +61,16 @@
         <div class="row">
           <div class="col-md-6">
 
-          <a class="btn btn-primary btn-lg" href="http://blog.landwiki.org.uk/about-landwiki/">
+          <a class="btn btn-primary btn-lg" href="http://blog.landwiki.org.uk/about-landwiki/" target="_blank">
             Read more about Land Wiki
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
           </div>
           <div class="col-md-6">
-            <a class="btn btn-default btn-lg" href="http://blog.landwiki.org.uk/contact/">
+            <a class="btn btn-default btn-lg" href="http://blog.landwiki.org.uk/contact/" target="_blank">
               <span class="glyphicon glyphicon-envelope"></span> Contact us
             </a>
-            <a class="btn btn-default btn-lg" href="https://twitter.com/landwiki">
+            <a class="btn btn-default btn-lg" href="https://twitter.com/landwiki" target="_blank">
               <span class="social twitter"></span> Twitter
             </a>
           </div>
