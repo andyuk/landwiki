@@ -31,7 +31,7 @@
       </section>
 
       <section class="survey">
-        <a href="https://landwiki.wufoo.com/forms/mdla6dp0eqlmgw/" class="btn btn-primary btn-lg" onClick="_gaq.push(['_trackEvent', 'Surveys', 'View', 'Nov13']);">Start the 30 second survey</a>
+        <a href="https://landwiki.wufoo.com/forms/mdla6dp0eqlmgw/" class="btn btn-primary btn-lg" onClick="_gaq.push(['_trackEvent', 'Surveys', 'View', 'Nov13']);" target="_blank">Start the 30 second survey</a>
       </section>
 
       <hr>
