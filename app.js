@@ -35,13 +35,12 @@ app.get('/test', routes.test);
 app.get('/land/add', land.add);
 app.get('/land/:id', land.detail);
 
-app.get('/survey', staticHTML.render('survey/index'));
-app.get('/survey/g', staticHTML.render('survey/index'));  // Intentional, for analytics.
+app.get('/survey', staticHTML.render('survey/index'));     // via website
+app.get('/survey/ga', staticHTML.render('survey/index'));  // via Google Adwords
+app.get('/survey/sm', staticHTML.render('survey/index'));  // via Social Media
 app.get('/survey/thanks', staticHTML.render('survey/thanks'));
-
 app.get('/donation/thanks', staticHTML.render('donation/thanks'));
 app.get('/donation/cancelled', staticHTML.render('donation/cancelled'));
-
 app.get('/mailinglist/thanks', staticHTML.render('mailinglist/thanks'));
 
 mongoose.connect(MONGO_URI, function(err) {

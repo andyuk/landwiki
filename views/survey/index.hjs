@@ -26,12 +26,12 @@
 
       <section class="survey-intro">
         <h1>Looking for land?</h1>
-        <p class="lead">We're helping people like you find land. <a href="http://www.landwiki.org.uk">LandWiki</a> is an open platform encouraging citizens to help each other to find land.</p>
+        <p class="lead">We're helping people like you find land. <a href="http://www.landwiki.org.uk">Land Wiki</a> is an open platform encouraging citizens to help each other to find land.</p>
         <p>We're doing a survey to identify the main problems people have with finding and buying land. </p>
       </section>
 
       <section class="survey">
-        <a href="https://landwiki.wufoo.com/forms/mdla6dp0eqlmgw/" class="btn btn-primary btn-lg">Start the 30 second survey</a>
+        <a href="https://landwiki.wufoo.com/forms/mdla6dp0eqlmgw/" class="btn btn-primary btn-lg" onClick="_gaq.push(['_trackEvent', 'Surveys', 'View', 'Nov13']);">Start the 30 second survey</a>
       </section>
 
       <hr>
@@ -49,8 +49,9 @@
           </div>
           <div class="col-md-6">
                 <p>
-                  <img src="http://dummyimage.com/120x120/000/fff" alt="Mairead" class="img-rounded">
-                Aliquam interdum pulvinar mollis. In in venenatis velit, vitae fermentum libero. Nullam in elementum massa. Sed eros mi, egestas vitae augue vitae, varius lacinia eros. Suspendisse potenti.</p>
+                  <img src="img/mairead.jpg" width="120" alt="Mairead" class="img-rounded">
+                Mairead is a creative web developer, based in London, who specialises in exciting interactive experiences. She is interested in any technology that pushes the boundaries of web development and is always looking for new ideas to harness what the internet can do for us.</p>
+                <p>She thinks the internet is our greatest tool to provide social change and got involved with the Land Wiki to help users share information in a meaningful way and build a better future for themselves.</p>
           </div>
         </div>
       </section>
@@ -61,7 +62,7 @@
           <div class="col-md-6">
 
           <a class="btn btn-primary btn-lg" href="http://blog.landwiki.org.uk/about-landwiki/">
-            Read more about LandWiki
+            Read more about Land Wiki
             <span class="glyphicon glyphicon-chevron-right"></span>
           </a>
           </div>
